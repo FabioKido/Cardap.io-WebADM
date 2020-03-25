@@ -1,75 +1,51 @@
-import React, {Component, Fragment } from 'react';
+import React, { useState, useEffect } from 'react';
 import api from '../../services/api';
-import { Link } from 'react-router-dom';
 import Header from "../../components/Header";
 
 import './styles.css';
 
-export default class Main extends Component{
-	state = {
-		products: [],
-		productInfo: {},
-		page: 1,
-	};
+export default function Main(){
 
-	componentDidMount(){
-		this.loadProduct();
-	}
+	const [products, setProducts] = useState([]);
 
-	loadProduct = async (page = 1) => {
-		const response = await api.get(`/products?page=${page}`);
+	useEffect(() => {
+	    async function loadProducts() {
+	    	/*const category = '5e6c2610466e5a4af1f48136';
 
-		const { docs, ...productInfo } = response.data;
+		    const response = await api.get('/products', {
+		        params: { category }
+		    });
 
-		this.setState({ products: docs, productInfo, page });
-	};
 
-	prevPage = () => {
-		const { page, productInfo } = this.state;
 
-		if ( page === 1) return;
+		    setProducts(response.data.data);*/
+		    const data = [
+		    	{_id: "1", name: "Produto1", ingredients: "arroz, feijão, ovo"},
+		    	{_id: "2", name: "Produto2", ingredients: "arroz, feijão, ovo"},
+		    	{_id: "3", name: "Produto3", ingredients: "arroz, feijão, ovo"},
+		    	{_id: "4", name: "Produto4", ingredients: "arroz, feijão, ovo"},
+		    	{_id: "5", name: "Produto5", ingredients: "arroz, feijão, ovo"},
+		    ]
 
-		const pageNumber = page - 1;
+		    setProducts(data);
+		    console.log(data)
+	    }
 
-		this.loadProduct(pageNumber);
-	};
+	    loadProducts();
+	}, []);
 
-	nextPage = () => {
-		const { page, productInfo } = this.state;
-
-		if ( page === productInfo.pages) return;
-
-		const pageNumber = page + 1;
-
-		this.loadProduct(pageNumber);
-	};
-
-	render(){
-		const { products, page, productInfo } = this.state;
-
-		return (
-			<Fragment>
-				<Header />
-				<div className="product-list">
-					{products.map(product => (
+  	return (
+		<>
+			<Header />
+			<div className="product-list">
+				{products.map(product => (
 						<article key={product._id}>
-							<strong>{product.title}</strong>
-							<p>{product.description}</p>
-
-							<Link to={`/products/${product._id}`}>Acessar</Link>
+							<strong>{product.name}</strong>
+							<p>{product.ingredients}</p>
 						</article>
-					))}
-					<div className="actions">
-						<button disabled={page === 1} onClick={this.prevPage}>
-							Anterior
-						</button>
-
-						<button disabled={page === productInfo.pages} onClick={this.nextPage}>
-							Proxima
-						</button>
-					</div>
-				</div>
-			</Fragment>
-		);
-	}
+					))
+				}
+			</div>
+		</>
+	)
 }

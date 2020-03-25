@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import api from '../../services/api';
-import { permission } from '../../services/auth';
+//import { permission } from '../../services/auth';
 
 import "./styles.css";
 
@@ -29,7 +29,6 @@ export default class Product extends Component {
 				<h1>{user.email}</h1>
 				<p>{user.role}</p>
 				<a className="link" href={`/edit/${user.id}`}>Editar Usuário</a>
-				{permission().emailPermission && <a href="/email">Email</a>}
 			</div>
 		);
 	}

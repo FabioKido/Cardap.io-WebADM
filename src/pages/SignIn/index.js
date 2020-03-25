@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from "react";
-import { Link, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import Header from "../../components/Header";
-import Logo from "../../assets/airbnb-logo.svg";
 import api from "../../services/api";
 import { login } from "../../services/auth";
 
@@ -23,13 +22,13 @@ class SignIn extends Component {
       this.setState({ error: "Preencha e-mail e senha para continuar!" });
     } else {
       try {
-        const response = await api.post("/login", { email, password });
+        const response = await api.post("/sessions", { email, password });
         const { access_token } = response.data;
-        const { id } = response.data.data;
 
-        login(access_token, id);
+        login(access_token);
 
-        this.props.history.push(`/users`);
+        this.props.history.push('/');
+
       } catch (err) {
         this.setState({
           error:
@@ -45,7 +44,6 @@ class SignIn extends Component {
         <Header />
         <Container>
           <Form onSubmit={this.handleSignIn}>
-            <img src={Logo} alt="Airbnb logo" />
             {this.state.error && <p>{this.state.error}</p>}
             <input
               type="email"
@@ -59,7 +57,6 @@ class SignIn extends Component {
             />
             <button type="submit">Entrar</button>
             <hr />
-            <Link to="/signup">Criar conta grátis</Link>
           </Form>
         </Container>
       </Fragment>

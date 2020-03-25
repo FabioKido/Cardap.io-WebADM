@@ -3,7 +3,7 @@ import api from '../../services/api';
 import Header from "../../components/Header";
 import { Link, withRouter } from 'react-router-dom';
 
-import Logo from "../../assets/airbnb-logo.svg";
+//import Logo from "../../assets/airbnb-logo.svg";
 
 import { Form, Container } from "./styles";
 
@@ -47,7 +47,6 @@ class Register extends Component{
 				<Header />
 				<Container>
 			        <Form onSubmit={this.handleOnSubmit}>
-				        <img src={Logo} alt="Airbnb logo" />
 				          {this.state.error && <p>{this.state.error}</p>}
 				        <input
 				            type="text"
