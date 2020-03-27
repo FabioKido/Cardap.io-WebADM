@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+
 import api from '../../services/api';
 import Header from "../../components/Header";
 
@@ -36,7 +37,7 @@ export default function Main(){
 
   	return (
 		<>
-			<Header />
+			<Header pageAtual="Dashboard" />
 			<div className="product-list">
 				{products.map(product => (
 						<article key={product._id}>

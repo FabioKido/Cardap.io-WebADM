@@ -5,14 +5,15 @@ header#main-header {
 	font-weight: bold;
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-between;
+	padding: 0 15px;
 }
 
 a{
     text-decoration: none;
     padding: 10px;
 	border-radius: 5px;
-	color: #FFF
+	color: #FFF;
 }
 
 header .nome{
@@ -27,4 +28,15 @@ header .links{
 	align-items: center;
 	display: flex;
 	justify-content: flex-end;
+}
+
+a:hover {
+	border-bottom: 1px solid green;
+}
+
+header .page{
+	font-size: 18px;
+	font-weight: bold;
+	align-items: center;
+	color: green;
 }

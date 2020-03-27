@@ -4,8 +4,8 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 import Configuration from './pages/Configuration';
 import Main from './pages/main';
-import Product from "./pages/product";
-import Register from "./pages/register";
+//import Product from "./pages/product";
+//import Register from "./pages/register";
 import SignIn from "./pages/SignIn";
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
