@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import api from '../../services/api';
-import Header from "../../components/Header";
-
-import "./styles.css";
+import Layout from "../../components/Layout"
 
 export default function Config(){
 	const [user, setUser] = useState({});
@@ -28,8 +26,7 @@ export default function Config(){
 
 	if(user) {
 		return(
-		  	<>
-				<Header pageAtual="Configurações" />
+		  	<Layout>
 			  	<div className="container">
 			  		<div className="content">
 				  		<div className="user">
@@ -62,14 +59,11 @@ export default function Config(){
 				  		</div>
 				  	</div>
 			  	</div>
-			</>
+			</Layout>
 		);
 	} else {
-		return (
-			<>
-				<Header pageAtual="Configurações" />
-				<p>Carregando...</p>
-			</>
+		return (		
+			<p>Carregando...</p>
 		)
 	}
 };

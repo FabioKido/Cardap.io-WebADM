@@ -5,7 +5,7 @@ import { Link, withRouter } from 'react-router-dom';
 
 //import Logo from "../../assets/airbnb-logo.svg";
 
-import { Form, Container } from "./styles";
+
 
 class Register extends Component{
 
@@ -21,22 +21,22 @@ class Register extends Component{
 	    e.preventDefault();
 
 	    const { email, password, role } = this.state;
-	    
+
 	    if (!email || !password || !role) {
-	    
+
 	      	this.setState({ error: "Preencha todos os dados para registrar" });
-	    
+
 	    } else {
 	      try {
 
 	        await api.post("/signup", { role, email, password });
 	        this.props.history.push("/login");
-	      
+
 	      } catch (err) {
-	        
+
 	        console.log(err);
 	        this.setState({ error: "Ocorreu um erro ao registrar-se" });
-	      
+
 	      }
 	    }
 	};
@@ -68,7 +68,7 @@ class Register extends Component{
 				        <Link to="/">Home</Link>
 			        </Form>
 			    </Container>
-			</Fragment>		
+			</Fragment>
     	)
 
 	}

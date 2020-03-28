@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import api from '../../services/api';
 //import { permission } from '../../services/auth';
 
-import "./styles.css";
+
 
 export default class Product extends Component {
 	state = {
