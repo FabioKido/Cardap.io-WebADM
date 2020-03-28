@@ -3,12 +3,14 @@ import { Link } from 'react-router-dom';
 
 import icon from "../../assets/icon.png";
 
+//<img src={icon} style={{width: '70%', height: '70%'}} alt='Cardap.io'></img>
+
 const Header = () => {
 	return(
-		<div className='bg-gray-200 px-4 py-4'>
+		<div className='bg-purple-200 px-4 py-4'>
 			<div className='w-full md:max-w-6xl md:mx-auto md:flex md:items-center md:justify-between'>
 				<div>
-					<Link to='/' className='inline-block py-2 text-gray-800 text-2xl font-bold'><img src={icon} style={{width: '70%', height: '70%'}} alt='Cardap.io'></img></Link>
+					<Link to='/' className='inline-block py-2 text-purple-800 text-2xl font-bold'>Cardap.io</Link>
 				</div>
 
 				<div>
@@ -27,7 +29,7 @@ const Header = () => {
 							className='inline-block py-1 md:py-4 text-gray-500 hover:text-gray-600 mr-6'
 							>Pedidos Realizados</Link>
 						<Link
-							to='#'
+							to='/request-all'
 							className='inline-block py-1 md:py-4 text-gray-500 hover:text-gray-600 mr-6'
 							>Todos os Pedidos</Link>
 					</div>

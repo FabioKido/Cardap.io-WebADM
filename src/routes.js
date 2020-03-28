@@ -3,6 +3,7 @@ import { isAuthenticated } from './services/auth';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 import Configuration from './pages/Configuration';
+import RequestAll from "./pages/Request";
 import Main from './pages/main';
 //import Product from "./pages/product";
 //import Register from "./pages/register";
@@ -28,9 +29,10 @@ const Routes = () => (
 				<Route exact path="/" component={Main} />
 				<Route path="/login" component={SignIn} />
 				<PrivateRoute path="/config" component={Configuration} />
+        <PrivateRoute path="/request-all" component={RequestAll} />
 				<Route path="*" component={() => <h1>Page not found</h1>} />
 			</Switch>
-		</Fragment>	
+		</Fragment>
 	</BrowserRouter>
 );
 

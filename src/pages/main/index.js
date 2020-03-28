@@ -10,13 +10,13 @@ export default function Main(){
       <title>Cardap.io - Início</title>
     </Helmet>
 		<div>
-      <div className='bg-gray-200 md:overflow-hidden'>
+      <div className='bg-purple-200 md:overflow-hidden'>
         <div className='px-4 py-16'>
           <div className='relative w-full md:max-w-2xl md:mx-auto text-center'>
             <h1
               className='font-bold text-gray-700 text-xl sm:text-2xl md:text-5xl leading-tight mb-6'
             >
-              Uma aplicação simples e inteligente que ajudará a controlar seus pedidos
+              Uma aplicação simples e inteligente que ajuda a gerenciar seu restaurante
             </h1>
 
             <p className='text-gray-600 md:text-xl md:px-18'>
@@ -34,7 +34,7 @@ export default function Main(){
         </div>
 
         <svg
-          className='fill-current bg-gray-200 text-white hidden md:block'
+          className='fill-current bg-purple-200 text-white hidden md:block'
           xmlns='http://www.w3.org/2000/svg'
           viewBox='0 0 1440 320'
         >
